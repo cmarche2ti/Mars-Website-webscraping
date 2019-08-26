@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Mars Information</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <h1>Mission to Mars</h1> 
+          <a href="/scrape" class="btn btn-info" role="button">Scrape New Data</a> 
+          <br>      
+          <br>
+          <img src="{{featured.featured_image}}" alt="featured image">
+        <br>  
+        <br>
+        <h3>Latest Mars News</h3>
+          <h5>{{news.mars_news.news_title}}</h5>
+          <p>{{news.mars_news.news_paragraph_text}}</p>
+        <h3>Lastest Mars Weather</h3>
+          <p>{{weather.weather}}</p>
+        
+        <h3>Mars Facts</h3>
+          {{facts.mars_facts|safe}}
+        
+        <br>
+        <h3>Mars Hemisphere Images</h3> 
+          <br>         
+          {% for image in images.mars_images %}
+            <h5>{{image.title}}</h5>
+            <img src="{{image.url}}" alt="{{image.url}}" width='500px'>
+            <br>
+            <br>
+          {% endfor %}
+
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
