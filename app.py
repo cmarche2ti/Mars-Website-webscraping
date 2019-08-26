@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 import scrape_utils
+
 
 # Import our pymongo library, which lets us connect our Flask app to our Mongo database.
 import pymongo
@@ -56,7 +57,7 @@ def mars_scrape():
         "mars_images": scrape_utils.get_mars_images()
         }
     db.mars.insert_one(to_insert)    
-    return render_template('index.html')
+    return redirect("/", code=302)
 
 
 if __name__ == "__main__":
