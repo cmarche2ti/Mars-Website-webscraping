@@ -39,7 +39,7 @@ def get_mars_news():
 def get_mars_facts():
     marsfacts_url = "https://space-facts.com/mars/"
     mars_table_list = pd.read_html(marsfacts_url)
-    marsfacts_df = mars_table_list[1]
+    marsfacts_df = mars_table_list[0]
     marsfacts_df.columns = ['fact', 'value']
     return marsfacts_df.to_html(index=False, header=False).replace("\n", "")
 
@@ -69,7 +69,7 @@ def get_mars_images():
 # print(get_mars_news())
 # print(get_mars_facts())
 # print(get_mars_weather())
-print(get_mars_featured_image())
+# print(get_mars_featured_image())
 # print(get_mars_images())
 
 # data = db.mycollection.find()
